@@ -4,8 +4,7 @@ import { ListaComprasComponent } from './lista-compras/lista-compras.component';
 import { ItemComprasComponent } from './item-compras/item-compras.component';
 
 const routes: Routes = [
-  { path: '', component: ListaComprasComponent }, // Rota padrão
-  // { path: 'outro-caminho', component: OutroComponente }, // Exemplo de outra rota
+  { path: '', component: ListaComprasComponent },
 ];
 
 @NgModule({
