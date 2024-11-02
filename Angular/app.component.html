@@ -1,0 +1,33 @@
+<div>
+    <h1>Lista de Compras 🛍️</h1>
+  
+    <div>
+      <input [(ngModel)]="itemName" placeholder="Adicione um item ✏️" />
+      <button (click)="addItem()" [disabled]="!itemName">Adicionar Item ➕</button>
+    </div>
+  
+    <h2>Não Comprados 🛒</h2>
+    <ul>
+      <ng-container *ngFor="let item of notBoughtItems">
+        <app-item-compras 
+          [item]="item" 
+          (markAsBought)="markAsBought(item.id)"
+          (delete)="deleteItem(item.id)"
+          (edit)="editItem(item.id)">
+        </app-item-compras>
+      </ng-container>
+    </ul>
+  
+    <h2>Comprados ✅</h2>
+    <ul>
+      <ng-container *ngFor="let item of boughtItems">
+        <app-item-compras 
+          [item]="item" 
+          (markAsBought)="markAsBought(item.id)"
+          (delete)="deleteItem(item.id)"
+          (edit)="editItem(item.id)">
+        </app-item-compras>
+      </ng-container>
+    </ul>
+  </div>
+  
